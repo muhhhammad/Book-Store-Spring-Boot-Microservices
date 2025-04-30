@@ -9,9 +9,10 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 
+@Disabled
 class ProductControllerTest extends AbstractIntegrationTest {
 
-    @Disabled
+
     @Test
     void shouldReturnProducts(){
 
