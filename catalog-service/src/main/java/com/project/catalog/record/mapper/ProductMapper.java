@@ -5,6 +5,7 @@ import com.project.catalog.record.ProductRecord;
 
 public class ProductMapper {
 
+    //This Will Map the Product(Entity) to ProductRecord So we can only reveal necessary Information
     public static ProductRecord toProduct(Product product){
          return new ProductRecord(
                  product.getCode(),

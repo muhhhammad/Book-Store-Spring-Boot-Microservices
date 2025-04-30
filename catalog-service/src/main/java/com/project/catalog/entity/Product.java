@@ -34,17 +34,19 @@ public class Product {
     @DecimalMin("0.1")
     private BigDecimal price;
 
+    //This Constructor in not in the Use but to be on the
+    //Safe Side I made it.
     public Product(){
 
     }
 
-    public Product(String code, String name, String description, String imageUrl, BigDecimal price) {
-        this.code = code;
-        this.name = name;
-        this.description = description;
-        this.imageUrl = imageUrl;
-        this.price = price;
-    }
+//    public Product(String code, String name, String description, String imageUrl, BigDecimal price) {
+//        this.code = code;
+//        this.name = name;
+//        this.description = description;
+//        this.imageUrl = imageUrl;
+//        this.price = price;
+//    }
 
     public Product(Long id, String code, String name, String description, String imageUrl, BigDecimal price) {
         this.id = id;
