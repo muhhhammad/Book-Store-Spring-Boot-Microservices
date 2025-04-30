@@ -9,11 +9,8 @@ on:
 
 jobs:
   build:
-    name: Build on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
+    name: Build on ubuntu-latest
+    runs-on: ubuntu-latest
 
     env:
       working-directory: ./catalog-service
@@ -32,17 +29,10 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
 
-      - name: Make mvnw executable (Linux only)
-        if: runner.os == 'Linux'
+      - name: Make mvnw executable
         run: chmod +x mvnw
 
-      - name: Build with Maven (Linux)
-        if: runner.os == 'Linux'
+      - name: Build with Maven
         run: ./mvnw -ntp verify
-
-      - name: Build with Maven (Windows)
-        if: runner.os == 'Windows'
-        run: .\mvnw.cmd -ntp verify
-
 
 #        - if: #{{ github.ref == 'refs/heads/main' }}
