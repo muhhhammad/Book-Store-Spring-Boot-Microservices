@@ -1,4 +1,4 @@
-package com.project.catalog_service;
+package com.project.catalog;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
