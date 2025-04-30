@@ -10,6 +10,8 @@ import java.math.BigDecimal;
 @Table(name = "products")
 public class Product {
 
+    //Use @Lombok Annotation if you want to.
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "product_id_generator")
     @SequenceGenerator(name =  "product_id_generator", sequenceName = "product_id_seq")

@@ -11,7 +11,7 @@ import static org.hamcrest.Matchers.*;
 //@Disabled
 class ProductControllerTest extends AbstractIntegrationTest {
 
-
+    //Checks if API is Working Fine
     @Test
     void shouldReturnProducts(){
 
