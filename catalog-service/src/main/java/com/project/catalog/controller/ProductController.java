@@ -22,14 +22,15 @@ class ProductController {
 
     @GetMapping
     PagedResult<ProductRecord> getProducts(@RequestParam(name = "page", defaultValue = "1") int pageNo){
-        return productService.getProducts(pageNo);
+        return productService.getProducts(pageNo);//returns all the product in pageable form
     }
 
+    //We will get product by code.
     @GetMapping("/{code}")
     ResponseEntity<ProductRecord> getProductByCode(@PathVariable String code){
         return productService.getProductByCode(code)
                 .map(ResponseEntity::ok).orElseThrow(
-                        () -> ProductNotFoundException.forCode(code)
+                        () -> ProductNotFoundException.forCode(code)//If code is not correct this will throw Exception
                 );
 
     }
