@@ -1,6 +1,7 @@
 package com.project.catalog.service.impl;
 
 import com.project.catalog.ApplicationProperties;
+import com.project.catalog.entity.Product;
 import com.project.catalog.record.PagedResult;
 import com.project.catalog.record.ProductRecord;
 import com.project.catalog.repository.ProductRepository;
@@ -13,6 +14,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.project.catalog.record.mapper.ProductMapper;
+
+import java.util.Optional;
 
 
 @Service
@@ -47,5 +50,10 @@ public class ProductServiceImpl implements ProductService {
                 productPage.hasPrevious()
         );
 
+    }
+
+    @Override
+    public Optional<ProductRecord> getProductByCode(String code) {
+        return productRepository.findByCode(code).map(ProductMapper::toProduct);
     }
 }
