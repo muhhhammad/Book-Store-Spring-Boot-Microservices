@@ -9,5 +9,4 @@ public record ApplicationProperties(
         @DefaultValue("10")
         @Min(1)
         int pageSize
-) {
-}
+) { }
